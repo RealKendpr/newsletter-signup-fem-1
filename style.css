@@ -1,0 +1,157 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+:root {
+  --accent-clr: hsl(4, 100%, 67%);
+  --dark2-neutral: hsl(234, 29%, 20%);
+  --dark-neutral: hsl(235, 18%, 26%);
+  --light-neutral: hsl(231, 7%, 60%);
+  --light-white: hsl(0, 0%, 100%);
+
+  --body-font: "Roboto", sans-serif;
+}
+body {
+  background: var(--dark2-neutral);
+}
+.illustration-wrapper {
+  background: url(./assets/images/illustration-sign-up-mobile.svg);
+
+  width: 100%;
+  min-height: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0 0 16px 16px;
+}
+.card {
+  background: var(--light-white);
+}
+.texts {
+  padding: 44px 23px 40px;
+  display: grid;
+  gap: 50px;
+}
+.copy {
+  display: grid;
+  gap: 26.5px;
+}
+h1 {
+  font-size: 2.5rem;
+  font-family: var(--body-font);
+  font-weight: 700;
+}
+.copy p {
+  font-size: 1rem;
+  font-family: var(--body-font);
+}
+.copy ul {
+  list-style: none;
+  display: grid;
+  gap: 22px;
+
+  & li {
+    /* position: relative; */
+    line-height: 1.5;
+    font-weight: var(--body-font);
+
+    display: flex;
+    justify-items: center;
+    gap: 1rem;
+    /* &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      background: url(./assets/images/icon-list.svg);
+      width: 21px;
+      height: 21px;
+    } */
+  }
+}
+form {
+  display: grid;
+  gap: 25px;
+
+  & label {
+    font-family: var(--body-font);
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+
+  & input {
+    border: 1px solid var(--light-neutral);
+    outline: none;
+
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-top: 14px;
+    width: 100%;
+    font-size: 1rem;
+
+    &::placeholder {
+      font-size: 0.8rem;
+      font-family: var(--body-font);
+    }
+  }
+  & button {
+    border: 0;
+    outline: none;
+
+    background: var(--dark2-neutral);
+    color: var(--light-white);
+    border-radius: 8px;
+    padding: 20px 0;
+    width: 100%;
+    font-size: 1rem;
+    font-family: var(--body-font);
+    font-weight: 700;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+@media (width >=900px) {
+  .illustration-wrapper {
+    background: url(./assets/images/illustration-sign-up-desktop.svg);
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 593px;
+
+    width: 400px;
+    border-radius: 0 0 0 0;
+  }
+  .wrapper {
+    height: 100svh;
+    display: grid;
+    place-items: center;
+  }
+  .card {
+    padding: 26px;
+    border-radius: 24px;
+    /* max-width: 64% ;
+    height: 45%; */
+    width: 928px;
+    height: 642px;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 65px;
+  }
+  .texts {
+    padding: 0;
+    margin-left: 40px;
+  }
+  h1 {
+    font-size: 3.5rem;
+  }
+  form {
+    & input {
+      padding: 20px 22px;
+    }
+    & button {
+    }
+  }
+}
