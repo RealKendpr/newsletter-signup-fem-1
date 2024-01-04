@@ -85,7 +85,7 @@ If you want more help with writing markdown, we'd recommend checking out [The Ma
 
 <!-- - Website - [Add your name here](https://www.your-site.com) -->
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/RealKendpr)
+- Frontend Mentor - [@RealKendpr](https://www.frontendmentor.io/profile/RealKendpr)
   <!-- - Twitter - [@yourusername](https://www.twitter.com/yourusername) -->
   <!--
 
