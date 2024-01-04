@@ -109,6 +109,7 @@ form {
 
     &:hover {
       cursor: pointer;
+      background: linear-gradient(90deg,hsl(353, 100%, 67%),hsl(4, 100%, 67%));
     }
   }
 }
