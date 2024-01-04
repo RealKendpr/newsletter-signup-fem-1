@@ -26,6 +26,7 @@ body {
   border-radius: 0 0 16px 16px;
 }
 .card {
+  display: none;
   background: var(--light-white);
 }
 .texts {
@@ -106,20 +107,88 @@ form {
     font-size: 1rem;
     font-family: var(--body-font);
     font-weight: 700;
-
     &:hover {
       cursor: pointer;
-      background: linear-gradient(90deg,hsl(353, 100%, 67%),hsl(4, 100%, 67%));
+      background: linear-gradient(
+        90deg,
+        hsl(353, 100%, 67%),
+        hsl(4, 100%, 67%)
+      );
     }
   }
 }
 
-@media (width >=900px) {
+.hidden-card {
+  visibility: hidden;
+  opacity: 0;
+  display: none;
+}
+
+/* The styling of the card is desktop first approach, because there is a complication of sitting a height for the .success-card*/
+
+.success-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  border-radius: 24px;
+  padding: 48px 64px 64px;
+  width: 505px;
+  gap: 42px;
+
+  background: var(--light-white);
+}
+.thankyou {
+  & img {
+    width: 64px;
+  }
+  & p:first-of-type {
+    margin: 42px 0 22px;
+    font-family: var(--body-font);
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+  & p:last-of-type {
+    line-height: 1.5;
+    font-family: var(--body-font);
+    font-size: 1rem;
+  }
+}
+.submitted-email {
+  line-height: 1.5;
+  font-family: var(--body-font);
+  font-weight: 700;
+}
+
+.dismiss-button button {
+  outline: none;
+  border: 0;
+
+  background: var(--dark2-neutral);
+  color: var(--light-white);
+  font-size: 1rem;
+  font-family: var(--body-font);
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 23px 0;
+  width: 100%;
+
+  &:hover {
+    cursor: pointer;
+    background: linear-gradient(90deg, hsl(353, 100%, 67%), hsl(4, 100%, 67%));
+  }
+}
+
+@media (width >= 720px) {
   .illustration-wrapper {
     background: url(./assets/images/illustration-sign-up-desktop.svg);
 
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: right;
     height: 593px;
 
     width: 400px;
@@ -127,8 +196,8 @@ form {
   }
   .wrapper {
     height: 100svh;
-    display: grid;
-    place-items: center;
+    /* display: grid;
+    place-items: center; */
   }
   .card {
     padding: 26px;
@@ -137,7 +206,7 @@ form {
     height: 45%; */
     width: 928px;
     height: 642px;
-    display: flex;
+    display: none;
     flex-direction: row-reverse;
     gap: 65px;
   }
@@ -152,7 +221,25 @@ form {
     & input {
       padding: 20px 22px;
     }
-    & button {
+  }
+}
+
+/* This is the styling of .success-card for mobile */
+@media (width <= 500px) {
+  .success-card {
+    justify-content: space-between;
+    padding: 148px 22px 40px;
+    border-radius: 0;
+    height: 100svh;
+    width: 100%;
+  }
+  .thankyou {
+    & p:first-of-type {
+      margin: 20px 0;
+      font-size: 2.5rem;
+    }
+    & p:last-of-type {
+      max-width: 39ch;
     }
   }
 }
