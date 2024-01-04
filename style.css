@@ -26,8 +26,12 @@ body {
   border-radius: 0 0 16px 16px;
 }
 .card {
-  /* display: none; */
   background: var(--light-white);
+  /* transform: scale(1); */
+}
+.card.hidden {
+  /* transform: scale(0); */
+  display: none;
 }
 .texts {
   padding: 44px 23px 40px;
@@ -84,6 +88,7 @@ h1 {
   font-family: var(--body-font);
   font-weight: 700;
   text-align: right;
+  color: var(--accent-clr);
 }
 form {
   display: grid;
@@ -116,7 +121,6 @@ form {
 
       & + .input-error-message {
         display: block;
-        color: var(--accent-clr);
       }
     }
   }
@@ -132,6 +136,7 @@ form {
     font-size: 1rem;
     font-family: var(--body-font);
     font-weight: 700;
+
     &:hover {
       cursor: pointer;
       background: linear-gradient(
@@ -143,12 +148,6 @@ form {
   }
 }
 
-.hidden-card {
-  visibility: hidden;
-  opacity: 0;
-  display: none;
-}
-
 /* The styling of the card is desktop first approach, because there is a complication of sitting a height for the .success-card*/
 
 .success-card {
@@ -157,8 +156,8 @@ form {
   left: 50%;
   transform: translate(-50%, -50%);
 
+  /* display: none; */
   display: none;
-  /* display: flexs; */
   flex-direction: column;
   border-radius: 24px;
   padding: 48px 64px 64px;
@@ -166,6 +165,10 @@ form {
   gap: 42px;
 
   background: var(--light-white);
+}
+.success-card.visible {
+  display: flex;
+  /* transform: translate(-50%, -50%) scale(1); */
 }
 .thankyou {
   & img {
@@ -189,7 +192,7 @@ form {
   font-weight: 700;
 }
 
-.dismiss-button button {
+.dismiss-button-wrapper button {
   outline: none;
   border: 0;
 
@@ -254,7 +257,6 @@ form {
 /* This is the styling of .success-card for mobile */
 @media (width <= 500px) {
   .success-card {
-    display: none;
     justify-content: space-between;
     padding: 148px 22px 40px;
     border-radius: 0;
