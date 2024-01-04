@@ -26,7 +26,7 @@ body {
   border-radius: 0 0 16px 16px;
 }
 .card {
-  display: none;
+  /* display: none; */
   background: var(--light-white);
 }
 .texts {
@@ -53,13 +53,13 @@ h1 {
   gap: 22px;
 
   & li {
-    /* position: relative; */
     line-height: 1.5;
     font-weight: var(--body-font);
 
     display: flex;
     justify-items: center;
     gap: 1rem;
+    /* position: relative; */
     /* &::before {
       content: "";
       position: absolute;
@@ -70,13 +70,28 @@ h1 {
     } */
   }
 }
+
+.input-wrapper {
+  position: relative;
+}
+.input-error-message {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+
+  display: none;
+  font-size: 0.75rem;
+  font-family: var(--body-font);
+  font-weight: 700;
+  text-align: right;
+}
 form {
   display: grid;
   gap: 25px;
 
   & label {
     font-family: var(--body-font);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 700;
   }
 
@@ -93,6 +108,16 @@ form {
     &::placeholder {
       font-size: 0.8rem;
       font-family: var(--body-font);
+    }
+
+    &:invalid {
+      background: hsla(4, 100%, 67%, 0.3);
+      border-color: hsla(4, 100%, 67%, 0.5);
+
+      & + .input-error-message {
+        display: block;
+        color: var(--accent-clr);
+      }
     }
   }
   & button {
@@ -132,7 +157,8 @@ form {
   left: 50%;
   transform: translate(-50%, -50%);
 
-  display: flex;
+  display: none;
+  /* display: flexs; */
   flex-direction: column;
   border-radius: 24px;
   padding: 48px 64px 64px;
@@ -196,8 +222,8 @@ form {
   }
   .wrapper {
     height: 100svh;
-    /* display: grid;
-    place-items: center; */
+    display: grid;
+    place-items: center;
   }
   .card {
     padding: 26px;
@@ -206,7 +232,8 @@ form {
     height: 45%; */
     width: 928px;
     height: 642px;
-    display: none;
+    /* display: none; */
+    display: flex;
     flex-direction: row-reverse;
     gap: 65px;
   }
@@ -227,6 +254,7 @@ form {
 /* This is the styling of .success-card for mobile */
 @media (width <= 500px) {
   .success-card {
+    display: none;
     justify-content: space-between;
     padding: 148px 22px 40px;
     border-radius: 0;
